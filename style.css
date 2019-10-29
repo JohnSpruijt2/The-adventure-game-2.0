@@ -36,6 +36,8 @@ body {
     background-color: rgba(154, 154, 154, 0.423);
 }
 .options {
+    font-family: 'Stoke', serif;
+    font-size: 15px;
     display: block;
     float: left;
     margin: 10px;
@@ -48,6 +50,22 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+.options:hover {
+    background-color: white;
+    color: black;
+}
 button {
     display: none;
+}
+#inventory {
+    position: absolute;
+    border: rgb(3, 29, 21) solid 1px;
+    right: 23px;
+    width: 120px;
+    height: 614px;
+    background-color: rgba(5, 63, 46, 0.743);
+}
+#shovel {
+    margin: 15px;
+    width: 80px;
 }

@@ -6,12 +6,44 @@ var levels = [
         img: "img/frontGoblin.png",
         
         firstText: "Start Game",
-        firstOnclick: "loadlevel(1)",
+        firstOnclick: "loadlevel(2)",
         firstClass: "options",
 
-        secondText: "Quit",
-        secondOnclick: "",
+        secondText: "Credits",
+        secondOnclick: "loadlevel(1)",
         secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
+    },
+
+
+    {
+        name: "Credits",
+        title: "Credits ",
+        text: "Made by: John Spruijt <br> ©2019",
+        img: "img/frontGoblin.png",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(0)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
 
         thirdText: "",
         thirdOnclick: "",
@@ -34,7 +66,7 @@ var levels = [
     {
       name: "level 1 - forest road",
       title: "Forest road",
-      text: "You look around and you notice you are standing on a dirt road, and next to you is a dense forest. There is nothing interesting you can see from where you are right now. <br><br>You can't seem to remember how you got here or who you are.",
+      text: "You look around and you notice you are standing on a dirt road, and next to you is a dense forest. You can see a shovel in the ground. <br><br>You can't seem to remember how you got here or who you are.",
       img: "img/forestroad.jpg",
 
       firstText: "Go north up the road <i class='fas fa-arrow-up'></i>",
@@ -45,9 +77,9 @@ var levels = [
       secondOnclick: "alert('you clicked a button')",
       secondClass: "options",
 
-      thirdText: "",
-      thirdOnclick: "",
-      thirdClass: "",
+      thirdText: "Pick up a shovel",
+      thirdOnclick: "pickupShovel()",
+      thirdClass: "options",
 
       fourthText: "",
       fourthOnclick: "",
@@ -79,6 +111,13 @@ function loadlevel(levelnummer) {
     document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
 
+    if (levelnummer == 1) {
+      if (pickedupShovel == true) {
+        document.getElementById("option3").innerHTML = lvl.thirdText
+        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+        document.getElementById("option3").setAttribute('class',"")
+      }
+    }
     document.getElementById("option3").innerHTML = lvl.thirdText
     document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
     document.getElementById("option3").setAttribute('class',lvl.thirdClass)
@@ -95,4 +134,14 @@ function loadlevel(levelnummer) {
     document.getElementById("option6").setAttribute('onclick',lvl.sixOnclick)
     document.getElementById("option6").setAttribute('class',lvl.sixClass)
 }
+var pickedupShovel = false
+var hasshovel = false
+function pickupShovel() {
+  pickedupShovel = true
+  hasshovel = true
+    document.getElementById("shovel").src = "img/shovel.png"
+    document.getElementById("option3").setAttribute('class',"")
+}
+
+
 loadlevel(0)
