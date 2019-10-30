@@ -2,7 +2,7 @@ var levels = [
     {
         name: "Home screen",
         title: "The goblin road ",
-        text: " ",
+        text: "The adventure game 2.0",
         img: "img/frontGoblin.png",
         
         firstText: "Start Game",
@@ -70,7 +70,7 @@ var levels = [
       img: "img/forestroad.jpg",
 
       firstText: "Go north up the road <i class='fas fa-arrow-up'></i>",
-      firstOnclick: "alert('you clicked a button')",
+      firstOnclick: "loadlevel(4)",
       firstClass: "options",
 
       secondText: "Go south down the road <i class='fas fa-arrow-down'></i>",
@@ -81,9 +81,9 @@ var levels = [
       thirdOnclick: "pickupShovel()",
       thirdClass: "options",
 
-      fourthText: "",
-      fourthOnclick: "",
-      fourthClass: "",
+      fourthText: "Go into the forest <i class='fas fa-arrow-right'></i>",
+      fourthOnclick: "loadlevel(3)",
+      fourthClass: "options",
 
       fifthText: "",
       fifthOnclick: "",
@@ -92,13 +92,72 @@ var levels = [
       sixText: "",
       sixOnclick: "",
       sixClass: ""
+    },
+    {
+      name: "Forest Game over - lvl 1",
+        title: "Forest ",
+        text: "Ignoring the rumors about the goblins you decide to go into the forest.<br> After a while of walking around aimlessly your suroundings begin to look familiar.Then it hits you, you are lost.<br><br>You are wandering aimlessly around in the forest until you hear some noises nearby. Considering you dont have many options you decide to go towards the noise. You notice too late that the noise is coming from the rumored goblins and you dont have anything to fight them off with.<br><br>You are kidnapped and put inside a gaint vat of water and put above the fire. You are boiled alive. Look on the bright side the goblins have new meal to eat.",
+        img: "img/forest.jpg",
+        
+        firstText: "Restart",
+        firstOnclick: "restart();",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
+    },
+    {
+      name: "North road - lvl 2",
+        title: "North road",
+        text: "",
+        img: "img/cabin.jpg",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(2)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
     }
   ]
   
 function loadlevel(levelnummer) {
     var lvl = levels[levelnummer];
     console.log(lvl.name)
-
     document.getElementById("picture").src = lvl.img;
     document.getElementById("paragraf").innerHTML = lvl.text
     document.getElementById("titleId").innerHTML = lvl.title
@@ -111,16 +170,23 @@ function loadlevel(levelnummer) {
     document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
 
-    if (levelnummer == 1) {
+    if (lvl.name == "level 1 - forest road") {
       if (pickedupShovel == true) {
         document.getElementById("option3").innerHTML = lvl.thirdText
         document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-        document.getElementById("option3").setAttribute('class',"")
+        document.getElementById("option3").setAttribute('class',"none")
+      }
+      else {
+        document.getElementById("option3").innerHTML = lvl.thirdText
+        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+        document.getElementById("option3").setAttribute('class',lvl.thirdClass)
       }
     }
-    document.getElementById("option3").innerHTML = lvl.thirdText
-    document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-    document.getElementById("option3").setAttribute('class',lvl.thirdClass)
+    else {
+      document.getElementById("option3").innerHTML = lvl.thirdText
+      document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+      document.getElementById("option3").setAttribute('class',lvl.thirdClass)
+    }
     
     document.getElementById("option4").innerHTML = lvl.fourthText
     document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
@@ -134,6 +200,7 @@ function loadlevel(levelnummer) {
     document.getElementById("option6").setAttribute('onclick',lvl.sixOnclick)
     document.getElementById("option6").setAttribute('class',lvl.sixClass)
 }
+
 var pickedupShovel = false
 var hasshovel = false
 function pickupShovel() {
@@ -141,7 +208,10 @@ function pickupShovel() {
   hasshovel = true
     document.getElementById("shovel").src = "img/shovel.png"
     document.getElementById("option3").setAttribute('class',"")
+    document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
 
-
+function restart() {
+  location.reload()
+}
 loadlevel(0)

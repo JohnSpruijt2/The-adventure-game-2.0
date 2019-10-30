@@ -19,7 +19,7 @@ body {
     font-size: 20px;
     margin-top: 40px;
     margin-right: 30px;
-    padding: 2.5%;
+    padding: 0px 2.5% 2.5% 2.5%;
     float: right;
     width: 45%;
     height: 350px;
@@ -59,10 +59,10 @@ button {
 }
 #inventory {
     position: absolute;
-    border: rgb(3, 29, 21) solid 1px;
+    border: rgb(3, 29, 21) solid 2px;
     right: 23px;
     width: 120px;
-    height: 614px;
+    height: 697px;
     background-color: rgba(5, 63, 46, 0.743);
 }
 #shovel {
