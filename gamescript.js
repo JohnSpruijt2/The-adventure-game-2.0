@@ -216,7 +216,7 @@ var levels = [
     { // 7
       name: "Inside cabin - lvl 5",
         title: "Inside cabin",
-        text: "cabin text cabin text cabin text",
+        text: "You enter the cabin cautiously",
         img: "img/insidecabin.jpg",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
