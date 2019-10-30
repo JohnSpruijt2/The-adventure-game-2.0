@@ -216,20 +216,20 @@ var levels = [
     { // 7
       name: "Inside cabin - lvl 5",
         title: "Inside cabin",
-        text: "You enter the cabin cautiously",
+        text: "You enter the cabin and accidently knock down down a old closet standing next to the door. <br><br><a id='QEprompt'>ACT QUICKLY</a>",
         img: "img/insidecabin.jpg",
         
-        firstText: "Go back <i class='fas fa-undo'></i>",
-        firstOnclick: "loadlevel(4)",
+        firstText: "Freeze and do nothing",
+        firstOnclick: "QEfreeze()",
         firstClass: "options",
 
-        secondText: "",
-        secondOnclick: "",
-        secondClass: "",
+        secondText: "Catch the closet",
+        secondOnclick: "QEcatch()",
+        secondClass: "options",
 
-        thirdText: "",
-        thirdOnclick: "",
-        thirdClass: "",
+        thirdText: "Jump out the way",
+        thirdOnclick: "QEjump()",
+        thirdClass: "options",
 
         fourthText: "",
         fourthOnclick: "",
@@ -383,6 +383,19 @@ function digdirt() {
 }
 
 var haskey = false
+
+function QEfreeze() {
+
+}
+function QEcatch() {
+
+}
+function QEjump() {
+
+}
+
+
+
 
 function restart() {
   location.reload()
