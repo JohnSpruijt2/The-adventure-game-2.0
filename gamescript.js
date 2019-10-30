@@ -64,7 +64,7 @@ var levels = [
 
 
     { // 2
-      name: "level 1 - forest road",
+      name: "forest road - lvl 1",
       title: "Forest road",
       text: "You look around and you notice you are standing on a dirt road, and next to you is a dense forest. You can see a shovel in the ground. <br><br>You can't seem to remember how you got here or who you are.",
       img: "img/forestroad.jpg",
@@ -129,7 +129,7 @@ var levels = [
         text: "You walk to the north. You enter into a clearance with in the middle a little cabin.<br><br>On the wall of the cabin you notice a shovel.",
         img: "img/cabin.jpg",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(2)",
         firstClass: "options",
 
@@ -159,7 +159,7 @@ var levels = [
         text: "You walk to the south. <br><br>The road splits into two small paths.",
         img: "img/southroad.jpg",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(2)",
         firstClass: "options",
 
@@ -168,7 +168,7 @@ var levels = [
         secondClass: "options",
 
         thirdText: "Take the right path <i class='fas fa-arrow-right'></i>",
-        thirdOnclick: "loadlevel(7)",
+        thirdOnclick: "alert('This path hasnt been programmed yet')",
         thirdClass: "options",
 
         fourthText: "",
@@ -183,19 +183,49 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
-    {
+    { // 6
       name: "left path - lvl 4",
         title: "The left path ",
         text: "You enter a clearing in the forest and notice a mount of dirt",
         img: "img/leftpath.jpg",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(5)",
         firstClass: "options",
 
         secondText: "Inspect the mount of dirt",
         secondOnclick: "dirtmount()",
         secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
+    },
+    { // 7
+      name: "Inside cabin - lvl 5",
+        title: "Inside cabin",
+        text: "cabin text cabin text cabin text",
+        img: "img/insidecabin.jpg",
+        
+        firstText: "Go back <i class='fas fa-undo'></i>",
+        firstOnclick: "loadlevel(4)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
 
         thirdText: "",
         thirdOnclick: "",
@@ -261,9 +291,24 @@ function loadlevel(levelnummer) {
       document.getElementById("option3").setAttribute('class',lvl.thirdClass)
     }
     
-    document.getElementById("option4").innerHTML = lvl.fourthText
-    document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
-    document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+    if (lvl.name == "North road - lvl 2") {
+      if (haskey == false) {
+        document.getElementById("option4").innerHTML = lvl.fourthText
+        document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
+        document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+      }
+      else if (haskey == true) {
+        document.getElementById("option4").innerHTML = "Open door with key"
+      document.getElementById("option4").setAttribute('onclick',"loadlevel(7)")
+      document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+      }
+    }
+    else {
+      document.getElementById("option4").innerHTML = lvl.fourthText
+      document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
+      document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+    }
+    
     
     document.getElementById("option5").innerHTML = lvl.fifthText
     document.getElementById("option5").setAttribute('onclick',lvl.fifthOnclick)
@@ -283,7 +328,7 @@ function pickupShovel() {
   console.log("picked up shovel in lvl 2")
   pickedupShovel = true
   hasshovel = true
-    document.getElementById("shovel").src = "img/shovel.png"
+    document.getElementById("item1").src = "img/shovel.png"
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
@@ -303,7 +348,7 @@ function cabinDoor() {
     
   }
   else {
-
+    return;
   }
 }
 
@@ -311,6 +356,7 @@ var dugdirt = false
 var inspectdirt = false
 function dirtmount() {
     if (inspectdirt == false) {
+      console.log("inspected dirt mount in lvl 4")
       document.getElementById("paragraf").innerHTML += "<br><br>It apears something is buried here. You could try digging if you had a shovel."
       if (hasshovel == true) {
         document.getElementById("option2").innerHTML = "Try to dig with your shovel"
@@ -325,16 +371,18 @@ function dirtmount() {
   
 }
 function digdirt() {
+  console.log("dug the dirt in lvl 4")
+  console.log("Obtained key in lvl 4")
   document.getElementById("option2").setAttribute('class',"none")
-  document.getElementById("paragraf").innerHTML += "<br><br>You found a box with a key in it.<br> Sadly your shovel broke during digging."
-  document.getElementById("shovel").src = "img/brokenshovel.png"
+  document.getElementById("paragraf").innerHTML += "<br><br>You found a box with a key in it. You take the key out and throw the box on the ground.<br>Your shovel broke during digging."
+  document.getElementById("item1").src = "img/brokenshovel.png"
+  document.getElementById("item2").src = "img/key.png"
   haskey = true
   hasshovel = false
   dugdirt = true
 }
 
 var haskey = false
-
 
 function restart() {
   location.reload()

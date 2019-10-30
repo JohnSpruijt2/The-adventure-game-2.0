@@ -49,10 +49,14 @@ body {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition-duration: 0.2s;
 }
 .options:hover {
-    background-color: white;
+    background-color: rgb(215, 215, 215);
     color: black;
+    width: 200px;
+    height: 60px;
+    margin: 5px;
 }
 button {
     display: none;
@@ -65,7 +69,11 @@ button {
     height: 697px;
     background-color: rgba(5, 63, 46, 0.743);
 }
-#shovel {
+#item1 {
+    margin: 15px;
+    width: 80px;
+}
+#item2 {
     margin: 15px;
     width: 80px;
 }
