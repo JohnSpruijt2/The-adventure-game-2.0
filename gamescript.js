@@ -66,7 +66,7 @@ var levels = [
     { // 2
       name: "forest road - lvl 1",
       title: "Forest road",
-      text: "You look around and you notice you are standing on a dirt road, and next to you is a dense forest. You can see a shovel in the ground. <br><br>You can't seem to remember how you got here or who you are.",
+      text: "You are standing on a long road with next to it a dense forest.",
       img: "img/forestroad.jpg",
 
       firstText: "Go north up the road <i class='fas fa-arrow-up'></i>",
@@ -214,22 +214,52 @@ var levels = [
         sixClass: ""
     },
     { // 7
-      name: "Inside cabin - lvl 5",
-        title: "Inside cabin",
-        text: "You enter the cabin and accidently knock down down a old closet standing next to the door. <br><br><a id='QEprompt'>ACT QUICKLY</a>",
+      name: "QTE - lvl 5",
+        title: "Watch out!",
+        text: "You enter the cabin and accidently knock down down a old closet standing next to the door. <br><br><a id='QTEprompt'>ACT QUICKLY</a>",
         img: "img/insidecabin.jpg",
         
         firstText: "Freeze and do nothing",
-        firstOnclick: "QEfreeze()",
+        firstOnclick: "QTEfreeze()",
         firstClass: "options",
 
         secondText: "Catch the closet",
-        secondOnclick: "QEcatch()",
+        secondOnclick: "QTEcatch()",
         secondClass: "options",
 
         thirdText: "Jump out the way",
-        thirdOnclick: "QEjump()",
+        thirdOnclick: "QTEjump()",
         thirdClass: "options",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
+    },
+    { // 8
+      name: "Inside cabin - lvl 6",
+        title: "Inside cabin",
+        text: "Made by: John Spruijt <br> ©2019",
+        img: "img/insidecabin.jpg",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(4)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
 
         fourthText: "",
         fourthOnclick: "",
@@ -292,15 +322,16 @@ function loadlevel(levelnummer) {
     }
     
     if (lvl.name == "North road - lvl 2") {
-      if (haskey == false) {
+      if (unlockcabin == true) {
+        document.getElementById("option4").innerHTML = "Go inside the cabin"
+        document.getElementById("option4").setAttribute('onclick',"firstcabincheck()")
+        document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+
+      }
+      else {
         document.getElementById("option4").innerHTML = lvl.fourthText
         document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
         document.getElementById("option4").setAttribute('class',lvl.fourthClass)
-      }
-      else if (haskey == true) {
-        document.getElementById("option4").innerHTML = "Open door with key"
-      document.getElementById("option4").setAttribute('onclick',"loadlevel(7)")
-      document.getElementById("option4").setAttribute('class',lvl.fourthClass)
       }
     }
     else {
@@ -308,7 +339,6 @@ function loadlevel(levelnummer) {
       document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
       document.getElementById("option4").setAttribute('class',lvl.fourthClass)
     }
-    
     
     document.getElementById("option5").innerHTML = lvl.fifthText
     document.getElementById("option5").setAttribute('onclick',lvl.fifthOnclick)
@@ -320,6 +350,27 @@ function loadlevel(levelnummer) {
 
     inspectdirt = false
     triedCabin = false
+    triedShovel = false
+    triedKey = false
+    if (lvl.name == "left path - lvl 4") {
+      shovelLevel = true
+    }
+    else {
+      shovelLevel = false
+    }
+
+    if (lvl.name == "North road - lvl 2") {
+      cabindoorlevel = true
+    }
+    else {
+      cabindoorlevel = false
+    }
+    if (lvl.name == "QTE - lvl 5") {
+      if (firstCabinVisit == true) {
+        QTE = setTimeout(QTElost, 2000)
+        firstCabinVisit = false
+      }
+    }
 }
 
 var pickedupShovel = false
@@ -329,28 +380,74 @@ function pickupShovel() {
   pickedupShovel = true
   hasshovel = true
     document.getElementById("item1").src = "img/shovel.png"
+    document.getElementById("item1").setAttribute('onclick',"shovelclick()")
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
+var shovelLevel = false
+var triedShovel = false
+function shovelclick() {
+  if (hasshovel == true){
+    if (triedShovel == false) {
+      if (shovelLevel == false) {
+        document.getElementById("paragraf").innerHTML += "<br><br>you can't dig here"
+        triedShovel = true
+      }
+      else if (shovelLevel == true) {
+        console.log("dug the dirt in lvl 4")
+        console.log("Obtained chest in lvl 4")
+        document.getElementById("option2").setAttribute('class',"none")
+        document.getElementById("paragraf").innerHTML += "<br><br>You found a box with something rattling inside.<br>Your shovel broke during digging."
+        document.getElementById("item1").src = "img/brokenshovel.png"
+        document.getElementById("item2").src = "img/chest.png"
+        document.getElementById("item2").setAttribute('onclick',"keychest()")
+        hasshovel = false
+        dugdirt = true
+      }
+    }
+  }
+  
+  
+}
 
-var canCabin = false
-var cabinKey = false
-var triedCabin = false
-function cabinDoor() {
-  if (cabinKey == false) {
-    if (triedCabin == false) {
-      triedCabin = true
-      document.getElementById("paragraf").innerHTML += "<br><br>The door seems to be locked"
-    }
-    else {
-      return;
-    }
-    
+function keychest() {
+  document.getElementById("paragraf").innerHTML += "<br><br>You pry the chest open, and inside you find a key."
+  document.getElementById("item2").src = "img/key.png"
+  document.getElementById("item2").setAttribute('onclick',"key()")
+  console.log("opend chest to find key")
+}
+var unlockcabin = false
+var triedKey = false
+var cabindoorlevel = false
+function key() {
+  if (cabindoorlevel == true) {
+    console.log("unlocked cabin")
+    document.getElementById("paragraf").innerHTML += "<br><br>You unlocked the cabin door"
+    document.getElementById("item2").setAttribute('onclick',"")
+    unlockcabin = true
+    document.getElementById("option4").innerHTML = "Go inside the cabin"
+    document.getElementById("option4").setAttribute('onclick',"firstcabincheck()")
+    document.getElementById("option4").setAttribute('class',lvl.fourthClass)
   }
   else {
-    return;
+    if (triedKey == false) {
+      document.getElementById("paragraf").innerHTML += "<br><br>You can't use the key here."
+      triedKey = true
+    }
+  }
+    
+  
+}
+function firstcabincheck() {
+  if (firstCabinVisit == true) {
+    loadlevel(7)
+  }
+  else if (firstCabinVisit == false) {
+    loadlevel(8)
   }
 }
+
+
 
 var dugdirt = false
 var inspectdirt = false
@@ -358,11 +455,6 @@ function dirtmount() {
     if (inspectdirt == false) {
       console.log("inspected dirt mount in lvl 4")
       document.getElementById("paragraf").innerHTML += "<br><br>It apears something is buried here. You could try digging if you had a shovel."
-      if (hasshovel == true) {
-        document.getElementById("option2").innerHTML = "Try to dig with your shovel"
-        document.getElementById("option2").setAttribute('onclick',"digdirt()")
-        document.getElementById("option2").setAttribute('class',"options")
-      }
       inspectdirt = true
     }
     else if (inspectdirt == true) {
@@ -370,30 +462,40 @@ function dirtmount() {
     }
   
 }
-function digdirt() {
-  console.log("dug the dirt in lvl 4")
-  console.log("Obtained key in lvl 4")
-  document.getElementById("option2").setAttribute('class',"none")
-  document.getElementById("paragraf").innerHTML += "<br><br>You found a box with a key in it. You take the key out and throw the box on the ground.<br>Your shovel broke during digging."
-  document.getElementById("item1").src = "img/brokenshovel.png"
-  document.getElementById("item2").src = "img/key.png"
-  haskey = true
-  hasshovel = false
-  dugdirt = true
+
+
+var canCabin = false
+var triedCabin = false
+function cabinDoor() {
+    if (triedCabin == false) {
+      triedCabin = true
+      document.getElementById("paragraf").innerHTML += "<br><br>The door seems to be locked. You will need to find a key to open the door."
+    }
+    else {
+      return;
+    }
 }
+
 
 var haskey = false
 
-function QEfreeze() {
-
+var QTE = ""
+var firstCabinVisit = true
+function QTEfreeze() {
+  alert("YOU DIED!")
+  clearTimeout(QTE)
 }
-function QEcatch() {
-
+function QTEcatch() {
+  alert("YOU DIED!")
+  clearTimeout(QTE)
 }
-function QEjump() {
-
+function QTEjump() {
+  clearTimeout(QTE)
+  loadlevel(8)
 }
-
+function QTElost() {
+  alert("YOU DIED!")
+}
 
 
 
