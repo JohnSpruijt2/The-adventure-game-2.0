@@ -93,6 +93,8 @@ var levels = [
       sixOnclick: "",
       sixClass: ""
     },
+
+
     { // 3
       name: "Forest Game over - lvl 1",
         title: "Forest ",
@@ -123,6 +125,8 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
+
+
     { // 4
       name: "North road - lvl 2",
         title: "North road",
@@ -153,6 +157,8 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
+
+
     { // 5
       name: "South road - lvl 3",
         title: "South road",
@@ -183,6 +189,8 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
+
+
     { // 6
       name: "left path - lvl 4",
         title: "The left path ",
@@ -213,6 +221,8 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
+
+
     { // 7
       name: "QTE - lvl 5",
         title: "Watch out!",
@@ -243,6 +253,8 @@ var levels = [
         sixOnclick: "",
         sixClass: ""
     },
+
+    
     { // 8
       name: "Inside cabin - lvl 6",
         title: "Inside cabin",
