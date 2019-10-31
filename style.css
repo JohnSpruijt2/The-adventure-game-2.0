@@ -72,11 +72,19 @@ button {
 #item1 {
     margin: 15px;
     width: 80px;
+    transition-duration: 0.2s;
+}
+#item1:hover {
+    width: 90px;
 }
 #item2 {
     margin: 15px;
     width: 80px;
+    transition-duration: 0.2s;
 }
-#QEprompt {
+#item2:hover {
+    width: 90px;
+}
+#QTEprompt {
     font-size: 35px;
 }
