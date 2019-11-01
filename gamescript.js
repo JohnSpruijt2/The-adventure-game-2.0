@@ -77,13 +77,13 @@ var levels = [
       secondOnclick: "loadlevel(5)",
       secondClass: "options",
 
-      thirdText: "",
-      thirdOnclick: "",
-      thirdClass: "",
+      thirdText: "Go into the forest <i class='fas fa-arrow-right'></i>",
+      thirdOnclick: "loadlevel(3)",
+      thirdClass: "options",
 
-      fourthText: "Go into the forest <i class='fas fa-arrow-right'></i>",
-      fourthOnclick: "loadlevel(3)",
-      fourthClass: "options",
+      fourthText: "",
+      fourthOnclick: "",
+      fourthClass: "",
 
       fifthText: "",
       fifthOnclick: "",
@@ -286,7 +286,7 @@ var levels = [
         sixClass: ""
     }
   ]
-  
+
 function loadlevel(levelnummer) {
     var lvl = levels[levelnummer];
     console.log(lvl.name)
@@ -359,6 +359,8 @@ function loadlevel(levelnummer) {
     document.getElementById("option6").innerHTML = lvl.sixText
     document.getElementById("option6").setAttribute('onclick',lvl.sixOnclick)
     document.getElementById("option6").setAttribute('class',lvl.sixClass)
+    
+  
 
     inspectdirt = false
     triedCabin = false
@@ -514,4 +516,22 @@ function QTElost() {
 function restart() {
   location.reload()
 }
+
+var btn4 = document.createElement("button")
+    btn4.innerHTML = "help"
+    document.getElementById("buttonbox").appendChild(btn4); 
+    btn4.setAttribute('id',"option4")
+
+var btn5 = document.createElement("button")
+    btn5.innerHTML = "help"
+    document.getElementById("buttonbox").appendChild(btn5); 
+    btn5.setAttribute('id',"option5")
+
+var btn6 = document.createElement("button")
+    btn6.innerHTML = "help"
+    document.getElementById("buttonbox").appendChild(btn6); 
+    btn6.setAttribute('id',"option6")
+
+
+
 loadlevel(0)
