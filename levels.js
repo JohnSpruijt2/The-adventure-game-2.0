@@ -16,18 +16,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
@@ -48,18 +36,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
@@ -81,17 +57,6 @@ var levels = [
       thirdOnclick: "loadlevel(3)",
       thirdClass: "options",
 
-      fourthText: "",
-      fourthOnclick: "",
-      fourthClass: "",
-
-      fifthText: "",
-      fifthOnclick: "",
-      fifthClass: "",
-
-      sixText: "",
-      sixOnclick: "",
-      sixClass: ""
     },
 
 
@@ -112,18 +77,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
