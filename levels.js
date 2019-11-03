@@ -284,5 +284,67 @@ var levels = [
         sixText: "",
         sixOnclick: "",
         sixClass: ""
+    },
+
+    { // 9
+        name: "QTE freeze game over - lvl 5",
+        title: "You froze in place",
+        text: "You see the closet falling over and freeze in terror. <br><br>You are crushed to death under the closet.",
+        img: "img/insidecabin.jpg",
+        
+        firstText: "Restart",
+        firstOnclick: "restart();",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
+    },
+
+    { // 10
+        name: "QTE catch game over - lvl 5",
+        title: "You reacted quickly",
+        text: "You steady yourself to catch the falling closet like a bodybuilder.<br><br>What actually happens is that you extend your arms to catch it and immediately get crushed to death under the closet",
+        img: "img/insidecabin.jpg",
+        
+        firstText: "Restart",
+        firstOnclick: "restart();",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+
+        fourthText: "",
+        fourthOnclick: "",
+        fourthClass: "",
+
+        fifthText: "",
+        fifthOnclick: "",
+        fifthClass: "",
+
+        sixText: "",
+        sixOnclick: "",
+        sixClass: ""
     }
   ]

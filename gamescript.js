@@ -12,7 +12,6 @@ function pickupShovel() {
 }
 var triedShovel = false
 function shovelclick() {
-  alert(lvl.name)
   if (hasshovel == true){
     if (triedShovel == false) {
       if (lvl.name == "left path - lvl 4") {
@@ -25,8 +24,6 @@ function shovelclick() {
         document.getElementById("item2").setAttribute('onclick',"keychest()")
         hasshovel = false
         dugdirt = true
-
-        
       }
       else {
         document.getElementById("paragraf").innerHTML += "<br><br>you can't dig here"
@@ -34,8 +31,6 @@ function shovelclick() {
       }
     }
   }
-  
-  
 }
 
 function keychest() {
@@ -63,8 +58,6 @@ function key() {
       triedKey = true
     }
   }
-    
-  
 }
 function firstcabincheck() {
   if (firstCabinVisit == true) {
@@ -88,7 +81,6 @@ function dirtmount() {
     else if (inspectdirt == true) {
       
     }
-  
 }
 
 
@@ -110,19 +102,19 @@ var haskey = false
 var QTE = ""
 var firstCabinVisit = true
 function QTEfreeze() {
-  alert("YOU DIED!")
   clearTimeout(QTE)
+  loadlevel(9)
 }
 function QTEcatch() {
-  alert("YOU DIED!")
   clearTimeout(QTE)
+  loadlevel(10)
 }
 function QTEjump() {
   clearTimeout(QTE)
   loadlevel(8)
 }
 function QTElost() {
-  alert("YOU DIED!")
+  loadlevel(9)
 }
 
 
