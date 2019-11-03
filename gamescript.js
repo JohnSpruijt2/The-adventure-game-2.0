@@ -37,7 +37,7 @@ function keychest() {
   document.getElementById("paragraf").innerHTML += "<br><br>You pry the chest open, and inside you find a key."
   document.getElementById("item2").src = "img/key.png"
   document.getElementById("item2").setAttribute('onclick',"key()")
-  console.log("opend chest to find key")
+  console.log("opened chest to find key")
 }
 var unlockcabin = false
 var triedKey = false
@@ -48,9 +48,9 @@ function key() {
     document.getElementById("paragraf").innerHTML += "<br><br>You unlocked the cabin door"
     document.getElementById("item2").setAttribute('onclick',"")
     unlockcabin = true
-    document.getElementById("option4").innerHTML = "Go inside the cabin"
-    document.getElementById("option4").setAttribute('onclick',"firstcabincheck()")
-    document.getElementById("option4").setAttribute('class',lvl.fourthClass)
+    document.getElementById("option2").innerHTML = "Go inside the cabin"
+    document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
+    document.getElementById("option2").setAttribute('class',lvl.secondClass)
   }
   else {
     if (triedKey == false) {
@@ -98,7 +98,6 @@ function cabinDoor() {
 
 
 var haskey = false
-
 var QTE = ""
 var firstCabinVisit = true
 function QTEfreeze() {
@@ -123,20 +122,20 @@ function restart() {
   location.reload()
 }
 
-var btn4 = document.createElement("button")
-    btn4.innerHTML = "help"
-    document.getElementById("buttonbox").appendChild(btn4); 
-    btn4.setAttribute('id',"option4")
+//var btn4 = document.createElement("button")
+//    btn4.innerHTML = "help"
+//    document.getElementById("buttonbox").appendChild(btn4); 
+//    btn4.setAttribute('id',"option4")
 
-var btn5 = document.createElement("button")
-    btn5.innerHTML = "help"
-    document.getElementById("buttonbox").appendChild(btn5); 
-    btn5.setAttribute('id',"option5")
+//var btn5 = document.createElement("button")
+//    btn5.innerHTML = "help"
+//    document.getElementById("buttonbox").appendChild(btn5); 
+//    btn5.setAttribute('id',"option5")
 
-var btn6 = document.createElement("button")
-    btn6.innerHTML = "help"
-    document.getElementById("buttonbox").appendChild(btn6); 
-    btn6.setAttribute('id',"option6")
+//var btn6 = document.createElement("button")
+//    btn6.innerHTML = "help"
+//    document.getElementById("buttonbox").appendChild(btn6); 
+//    btn6.setAttribute('id',"option6")
 
 
 

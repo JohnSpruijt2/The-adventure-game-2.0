@@ -19,6 +19,19 @@ function loadlevel(levelnummer) {
         document.getElementById("option2").setAttribute('class',"")
       }
     }
+    else if(lvl.name == "North road - lvl 2") {
+      if (unlockcabin == true) {
+        document.getElementById("option2").innerHTML = "Go inside the cabin"
+        document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
+        document.getElementById("option2").setAttribute('class',lvl.secondClass)
+
+      }
+      else {
+        document.getElementById("option2").innerHTML = lvl.secondText
+        document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
+        document.getElementById("option2").setAttribute('class',lvl.secondClass)
+      }
+    }
     else {
       document.getElementById("option2").innerHTML = lvl.secondText
       document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
@@ -44,24 +57,9 @@ function loadlevel(levelnummer) {
       document.getElementById("option3").setAttribute('class',lvl.thirdClass)
     }
     
-    if (lvl.name == "North road - lvl 2") {
-      if (unlockcabin == true) {
-        document.getElementById("option4").innerHTML = "Go inside the cabin"
-        document.getElementById("option4").setAttribute('onclick',"firstcabincheck()")
-        document.getElementById("option4").setAttribute('class',lvl.fourthClass)
-
-      }
-      else {
-        document.getElementById("option4").innerHTML = lvl.fourthText
-        document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
-        document.getElementById("option4").setAttribute('class',lvl.fourthClass)
-      }
-    }
-    else {
-      document.getElementById("option4").innerHTML = lvl.fourthText
-      document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
-      document.getElementById("option4").setAttribute('class',lvl.fourthClass)
-    }
+    document.getElementById("option4").innerHTML = lvl.fourthText
+    document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
+    document.getElementById("option4").setAttribute('class',lvl.fourthClass)
     
     document.getElementById("option5").innerHTML = lvl.fifthText
     document.getElementById("option5").setAttribute('onclick',lvl.fifthOnclick)

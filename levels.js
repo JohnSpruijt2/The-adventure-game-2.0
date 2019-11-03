@@ -137,25 +137,14 @@ var levels = [
         firstOnclick: "loadlevel(2)",
         firstClass: "options",
 
-        secondText: "",
-        secondOnclick: "",
-        secondClass: "",
+        secondText: "Try the door of the cabin",
+        secondOnclick: "cabinDoor()",
+        secondClass: "options",
 
         thirdText: "Pick up a shovel",
         thirdOnclick: "pickupShovel()",
         thirdClass: "options",
 
-        fourthText: "Try the door of the cabin",
-        fourthOnclick: "cabinDoor()",
-        fourthClass: "options",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
@@ -176,18 +165,6 @@ var levels = [
         thirdText: "Take the right path <i class='fas fa-arrow-right'></i>",
         thirdOnclick: "alert('This path hasnt been programmed yet')",
         thirdClass: "options",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
@@ -208,18 +185,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
 
@@ -240,18 +205,6 @@ var levels = [
         thirdText: "Jump out the way",
         thirdOnclick: "QTEjump()",
         thirdClass: "options",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
     
@@ -272,18 +225,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
     { // 9
@@ -303,18 +244,6 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     },
 
     { // 10
@@ -334,17 +263,5 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
-
-        fourthText: "",
-        fourthOnclick: "",
-        fourthClass: "",
-
-        fifthText: "",
-        fifthOnclick: "",
-        fifthClass: "",
-
-        sixText: "",
-        sixOnclick: "",
-        sixClass: ""
     }
   ]
