@@ -1,5 +1,5 @@
 function loadlevel(levelnummer) {
-    var lvl = levels[levelnummer];
+    window.lvl = levels[levelnummer];
     console.log(lvl.name)
     document.getElementById("picture").src = lvl.img;
     document.getElementById("paragraf").innerHTML = lvl.text
@@ -77,19 +77,7 @@ function loadlevel(levelnummer) {
     triedCabin = false
     triedShovel = false
     triedKey = false
-    if (lvl.name == "left path - lvl 4") {
-      shovelLevel = true
-    }
-    else {
-      shovelLevel = false
-    }
 
-    if (lvl.name == "North road - lvl 2") {
-      cabindoorlevel = true
-    }
-    else {
-      cabindoorlevel = false
-    }
     if (lvl.name == "QTE - lvl 5") {
       if (firstCabinVisit == true) {
         QTE = setTimeout(QTElost, 2000)

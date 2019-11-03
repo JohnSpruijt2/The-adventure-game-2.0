@@ -10,16 +10,12 @@ function pickupShovel() {
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
-var shovelLevel = false
 var triedShovel = false
 function shovelclick() {
+  alert(lvl.name)
   if (hasshovel == true){
     if (triedShovel == false) {
-      if (shovelLevel == false) {
-        document.getElementById("paragraf").innerHTML += "<br><br>you can't dig here"
-        triedShovel = true
-      }
-      else if (shovelLevel == true) {
+      if (lvl.name == "left path - lvl 4") {
         console.log("dug the dirt in lvl 4")
         console.log("Obtained chest in lvl 4")
         document.getElementById("option2").setAttribute('class',"none")
@@ -29,6 +25,12 @@ function shovelclick() {
         document.getElementById("item2").setAttribute('onclick',"keychest()")
         hasshovel = false
         dugdirt = true
+
+        
+      }
+      else {
+        document.getElementById("paragraf").innerHTML += "<br><br>you can't dig here"
+        triedShovel = true
       }
     }
   }
@@ -44,9 +46,9 @@ function keychest() {
 }
 var unlockcabin = false
 var triedKey = false
-var cabindoorlevel = false
+
 function key() {
-  if (cabindoorlevel == true) {
+  if (lvl.name == "North road - lvl 2") {
     console.log("unlocked cabin")
     document.getElementById("paragraf").innerHTML += "<br><br>You unlocked the cabin door"
     document.getElementById("item2").setAttribute('onclick',"")
