@@ -56,21 +56,6 @@ function loadlevel(levelnummer) {
       document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
       document.getElementById("option3").setAttribute('class',lvl.thirdClass)
     }
-    
-    document.getElementById("option4").innerHTML = lvl.fourthText
-    document.getElementById("option4").setAttribute('onclick',lvl.fourthOnclick)
-    document.getElementById("option4").setAttribute('class',lvl.fourthClass)
-    
-    document.getElementById("option5").innerHTML = lvl.fifthText
-    document.getElementById("option5").setAttribute('onclick',lvl.fifthOnclick)
-    document.getElementById("option5").setAttribute('class',lvl.fifthClass)
-
-    document.getElementById("option6").innerHTML = lvl.sixText
-    document.getElementById("option6").setAttribute('onclick',lvl.sixOnclick)
-    document.getElementById("option6").setAttribute('class',lvl.sixClass)
-    
-  
-
     inspectdirt = false
     triedCabin = false
     triedShovel = false
