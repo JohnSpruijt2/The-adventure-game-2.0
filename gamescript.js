@@ -98,7 +98,7 @@ function cabinDoor() {
 
 
 var haskey = false
-var QTE = ""
+var QTE
 var firstCabinVisit = true
 function QTEfreeze() {
   clearTimeout(QTE)
@@ -111,6 +111,7 @@ function QTEcatch() {
 function QTEjump() {
   clearTimeout(QTE)
   loadlevel(8)
+  document.getElementById("paragraf").innerHTML += "You jump out the way of the falling closet<br><br>"
 }
 function QTElost() {
   loadlevel(9)
