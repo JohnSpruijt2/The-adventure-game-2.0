@@ -1,7 +1,7 @@
-
 var pickedupShovel = false
 var hasshovel = false
 function pickupShovel() {
+  
   console.log("picked up shovel in lvl 2")
   pickedupShovel = true
   hasshovel = true

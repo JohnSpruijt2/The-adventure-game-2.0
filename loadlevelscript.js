@@ -8,8 +8,46 @@ function loadlevel(levelnummer) {
     document.getElementById("option1").innerHTML = lvl.firstText
     document.getElementById("option1").setAttribute('onclick',lvl.firstOnclick)
     document.getElementById("option1").setAttribute('class',lvl.firstClass)
+
+    document.getElementById("option2").innerHTML = lvl.secondText
+    document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
+    document.getElementById("option2").setAttribute('class',lvl.secondClass)
     
-    if (lvl.name == "left path - lvl 4") {
+    document.getElementById("option3").innerHTML = lvl.thirdText
+    document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+    document.getElementById("option3").setAttribute('class',lvl.thirdClass)
+
+    loadlevelscript()
+}
+
+
+
+
+
+function loadlevelscript() {
+  inspectdirt = false
+    triedCabin = false
+    triedShovel = false
+    triedKey = false
+
+    if (lvl.name == "QTE - lvl 5") {
+      if (firstCabinVisit == true) {
+        QTE = setTimeout(QTElost, 2000)
+        firstCabinVisit = false
+      }
+    }
+    else if (lvl.name == "North road - lvl 2") {
+      if (pickedupShovel == true) {
+        document.getElementById("paragraf").innerHTML = "You walk to the north. You enter into a clearance with in the middle a little cabin."
+        document.getElementById("option3").innerHTML = lvl.thirdText
+        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+        document.getElementById("option3").setAttribute('class',"none")
+      }
+      else {
+        
+      }
+    }
+    else if (lvl.name == "left path - lvl 4") {
       if (dugdirt == false) {
         document.getElementById("option2").innerHTML = lvl.secondText
         document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
@@ -27,44 +65,10 @@ function loadlevel(levelnummer) {
 
       }
       else {
-        document.getElementById("option2").innerHTML = lvl.secondText
-        document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
-        document.getElementById("option2").setAttribute('class',lvl.secondClass)
+        
       }
     }
     else {
-      document.getElementById("option2").innerHTML = lvl.secondText
-      document.getElementById("option2").setAttribute('onclick',lvl.secondOnclick)
-      document.getElementById("option2").setAttribute('class',lvl.secondClass)
-    }
-    
-
-    if (lvl.name == "North road - lvl 2") {
-      if (pickedupShovel == true) {
-        document.getElementById("option3").innerHTML = lvl.thirdText
-        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-        document.getElementById("option3").setAttribute('class',"none")
-      }
-      else {
-        document.getElementById("option3").innerHTML = lvl.thirdText
-        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-        document.getElementById("option3").setAttribute('class',lvl.thirdClass)
-      }
-    }
-    else {
-      document.getElementById("option3").innerHTML = lvl.thirdText
-      document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-      document.getElementById("option3").setAttribute('class',lvl.thirdClass)
-    }
-    inspectdirt = false
-    triedCabin = false
-    triedShovel = false
-    triedKey = false
-
-    if (lvl.name == "QTE - lvl 5") {
-      if (firstCabinVisit == true) {
-        QTE = setTimeout(QTElost, 2000)
-        firstCabinVisit = false
-      }
+      
     }
 }
