@@ -164,20 +164,20 @@ var levels = [
     { // 8
       name: "Inside cabin - lvl 6",
         title: "Inside cabin",
-        text: "Made by: John Spruijt <br> ©2019",
+        text: "You can see a chest next to the oven, you also see staircase into the basement",
         img: "img/insidecabin.jpg",
         
         firstText: "Go back",
         firstOnclick: "loadlevel(4)",
         firstClass: "options",
 
-        secondText: "",
-        secondOnclick: "",
-        secondClass: "",
+        secondText: "investigate the chest",
+        secondOnclick: "chest()",
+        secondClass: "options",
 
-        thirdText: "",
-        thirdOnclick: "",
-        thirdClass: "",
+        thirdText: "Go down the staircase",
+        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdClass: "options",
     },
 
     { // 9

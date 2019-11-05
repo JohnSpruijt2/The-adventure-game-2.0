@@ -1,3 +1,8 @@
+function onload() {
+  document.getElementById("background").style.opacity = "100"
+}
+  
+
 var pickedupShovel = false
 var hasshovel = false
 function pickupShovel() {
@@ -7,6 +12,7 @@ function pickupShovel() {
   hasshovel = true
     document.getElementById("item1").src = "img/shovel.png"
     document.getElementById("item1").setAttribute('onclick',"shovelclick()")
+    document.getElementById("item1").style.opacity = "100"
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
@@ -22,6 +28,7 @@ function shovelclick() {
         document.getElementById("item1").src = "img/brokenshovel.png"
         document.getElementById("item2").src = "img/chest.png"
         document.getElementById("item2").setAttribute('onclick',"keychest()")
+        document.getElementById("item2").style.opacity = "100"
         hasshovel = false
         dugdirt = true
       }
@@ -44,19 +51,29 @@ var triedKey = false
 
 function key() {
   if (lvl.name == "North road - lvl 2") {
-    console.log("unlocked cabin")
+    if (unlockcabin == false) {
+      console.log("unlocked cabin")
     document.getElementById("paragraf").innerHTML += "<br><br>You unlocked the cabin door"
-    document.getElementById("item2").setAttribute('onclick',"")
     unlockcabin = true
     document.getElementById("option2").innerHTML = "Go inside the cabin"
     document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
+    }
   }
-  else {
+  else if (lvl.name == "Inside cabin - lvl 6") {
     if (triedKey == false) {
-      document.getElementById("paragraf").innerHTML += "<br><br>You can't use the key here."
+      console.log("tried golden key on chest")
+      document.getElementById("paragraf").innerHTML += "<br><br>You try the key on the chest, but it doesn't fit."
       triedKey = true
     }
+    
+  }
+  else {
+      if (triedKey == false) {
+        document.getElementById("paragraf").innerHTML += "<br><br>You can't use the key here."
+        triedKey = true
+      }
+    
   }
 }
 function firstcabincheck() {
@@ -111,11 +128,23 @@ function QTEcatch() {
 function QTEjump() {
   clearTimeout(QTE)
   loadlevel(8)
-  document.getElementById("paragraf").innerHTML += "You jump out the way of the falling closet<br><br>"
 }
 function QTElost() {
   loadlevel(9)
 }
+
+var triedChest = false
+function chest() {
+  if (triedChest == false) {
+    document.getElementById("paragraf").innerHTML += "<br><br>You can't seem to open or move the chest."
+    console.log("investigated chest")
+    triedChest = true
+  }
+  
+}
+
+
+
 
 
 

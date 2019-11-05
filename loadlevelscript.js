@@ -25,10 +25,11 @@ function loadlevel(levelnummer) {
 
 
 function loadlevelscript() {
-  inspectdirt = false
+    inspectdirt = false
     triedCabin = false
     triedShovel = false
     triedKey = false
+    triedChest = false
 
     if (lvl.name == "QTE - lvl 5") {
       if (firstCabinVisit == true) {
@@ -39,9 +40,18 @@ function loadlevelscript() {
     else if (lvl.name == "North road - lvl 2") {
       if (pickedupShovel == true) {
         document.getElementById("paragraf").innerHTML = "You walk to the north. You enter into a clearance with in the middle a little cabin."
-        document.getElementById("option3").innerHTML = lvl.thirdText
-        document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
-        document.getElementById("option3").setAttribute('class',"none")
+        if (unlockcabin == true ) {
+          document.getElementById("option2").innerHTML = "Go inside the cabin"
+          document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
+          document.getElementById("option2").setAttribute('class',lvl.secondClass)
+          document.getElementById("option3").setAttribute('class',"none")
+        }
+        else {
+          document.getElementById("option3").innerHTML = lvl.thirdText
+          document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
+          document.getElementById("option3").setAttribute('class',"none")
+        }
+        
       }
       else {
         
