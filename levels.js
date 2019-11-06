@@ -2,7 +2,7 @@ var levels = [
     { // 0
         name: "Home screen",
         title: "The goblin road ",
-        text: "The adventure game 2.0",
+        text: "The adventure game with goblins",
         img: "img/frontGoblin.png",
         
         firstText: "Start Game",
@@ -22,7 +22,7 @@ var levels = [
     { // 1
         name: "Credits",
         title: "Credits ",
-        text: "Artwork by: Google <br>Game design: John Spruijt <br>Game developed by: John Spruijt",
+        text: "Artwork by: Google images<br>Game design: John Spruijt <br>Game developed by: John Spruijt",
         img: "img/frontGoblin.png",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
@@ -116,7 +116,7 @@ var levels = [
         secondClass: "options",
 
         thirdText: "Take the right path <i class='fas fa-arrow-right'></i>",
-        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdOnclick: "loadlevel(13)",
         thirdClass: "options",
     },
 
@@ -257,10 +257,10 @@ var levels = [
     },
 
     { // 13
-      name: "Right Path - lvl 8",
-        title: "Right path",
-        text: "The forest comes to an end and you find yourself in a grass field.",
-        img: "img/grassfield.jpg",
+      name: "village - lvl 8",
+        title: "village path",
+        text: "The forest comes to an end and you find yourself in a village",
+        img: "img/village.jpg",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(5)",
