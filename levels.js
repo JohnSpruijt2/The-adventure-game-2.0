@@ -254,5 +254,24 @@ var levels = [
         thirdText: "Pick up the bucket",
         thirdOnclick: "pickupbucket()",
         thirdClass: "options",
+    },
+
+    { // 13
+      name: "Right Path - lvl 8",
+        title: "Right path",
+        text: "The forest comes to an end and you find yourself in a grass field.",
+        img: "img/grassfield.jpg",
+        
+        firstText: "Go back <i class='fas fa-undo'></i>",
+        firstOnclick: "loadlevel(5)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
     }
   ]
