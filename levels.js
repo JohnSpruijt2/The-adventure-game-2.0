@@ -25,7 +25,7 @@ var levels = [
         text: "Artwork by: Google <br>Game design: John Spruijt <br>Game developed by: John Spruijt",
         img: "img/frontGoblin.png",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(0)",
         firstClass: "options",
 
@@ -167,7 +167,7 @@ var levels = [
         text: "You can see a chest next to the oven, you also see staircase into the basement",
         img: "img/insidecabin.jpg",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(4)",
         firstClass: "options",
 
@@ -224,7 +224,7 @@ var levels = [
         text: "This is a text adventure game. You win the game by getting further into the game without dying. <br><br>You click the black buttons in order to do something.<br><br>When you have something in your inventory you can click on it in order to interact with it.",
         img: "img/frontGoblin.png",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(0)",
         firstClass: "options",
 
@@ -240,10 +240,10 @@ var levels = [
     { // 12
       name: "Cabin Basement - lvl 7",
         title: "Cabin Basement",
-        text: "There is an axe sitting next to the staircase. There is also a bucket in the corner.",
+        text: "There is an axe sitting next to the staircase. There is also a very filfthy looking bucket in the corner.",
         img: "img/basement.png",
         
-        firstText: "Go back",
+        firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(8)",
         firstClass: "options",
 

@@ -78,6 +78,11 @@ function loadlevelscript() {
         
       }
     }
+    else if (lvl.name == "Cabin Basement - lvl 7") {
+      if (pickedupaxe == true) {
+        document.getElementById("option2").setAttribute('class',"")
+      }
+    }
     else {
       
     }

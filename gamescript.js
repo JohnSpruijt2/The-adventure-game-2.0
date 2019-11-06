@@ -3,11 +3,6 @@ function onload() {
   var inventory = document.createElement("div")
     document.getElementById("background").appendChild(inventory)
     inventory.id = "inventory"
-
-  //var btn4 = document.createElement("button")
-//    btn4.innerHTML = "help"
-//    document.getElementById("buttonbox").appendChild(btn4); 
-//    btn4.setAttribute('id',"option4")
 }
   
 
@@ -159,15 +154,35 @@ function chest() {
   
 }
 
+
+var pickedupaxe = false
 function pickupaxe() {
   var axe = document.createElement("img")
   axe.src = "img/axe.png"
   document.getElementById("inventory").appendChild(axe)
   axe.id = "item3"
   axe.style.opacity = "100"
+  pickedupaxe = true
+  document.getElementById("option2").setAttribute('class',"")
+  document.getElementById("paragraf").innerHTML += "<br><br>You picked up the axe."
 }
 
 
+var buckettries = 0
+function pickupbucket() {
+  if (buckettries == 0) {
+    document.getElementById("paragraf").innerHTML += "<br>You really shouldn't pick that up."
+    buckettries = 1
+  }
+  else if (buckettries == 1) {
+    document.getElementById("paragraf").innerHTML += "<br>You don't know what happend to it. It is disgusting."
+    buckettries =2
+  }
+  else if (buckettries == 2) {
+    document.getElementById("paragraf").innerHTML += "<br>You decide to pick up the disgusting bucket."
+    document.getElementById("button3").setAttribute('class',"")
+  }
+}
 
 
 
