@@ -162,10 +162,19 @@ function pickupaxe() {
   document.getElementById("inventory").appendChild(axe)
   axe.id = "item3"
   axe.style.opacity = "100"
+  axe.setAttribute('onclick',"axe()")
   pickedupaxe = true
   document.getElementById("option2").setAttribute('class',"")
   document.getElementById("paragraf").innerHTML += "<br><br>You picked up the axe."
 }
+var triedAxe = false
+function axe() {
+  if (triedAxe == false) {
+    triedAxe = true
+    DocumentTimeline.getElementById("paragraf").innerHTML += "<br><br>There is nothing to do with your axe."
+  }
+}
+
 
 var pickedupbucket = false
 var buckettries = 0
@@ -187,9 +196,16 @@ function pickupbucket() {
   bucket.id = "item4"
   bucket.style.opacity = "100"
   pickedupbucket = true
+  bucket.setAttribute('onclick',"bucket()")
   }
 }
-
+var triedbucket = false
+function bucket() {
+  if (triedbucket == false) {
+    triedbucket = true
+    document.getElementById("paragraf").innerHTML += "<br><br>What would you want to do with that?"
+  }
+}
 
 
 
