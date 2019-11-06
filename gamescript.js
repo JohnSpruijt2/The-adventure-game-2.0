@@ -175,20 +175,20 @@ function axe() {
   }
 }
 
-
+var hasbucket = false
 var pickedupbucket = false
 var buckettries = 0
 function pickupbucket() {
   if (buckettries == 0) {
-    document.getElementById("paragraf").innerHTML += "<br>You really shouldn't pick that up."
+    document.getElementById("paragraf").innerHTML += "<br><br>You really shouldn't pick that up."
     buckettries = 1
   }
   else if (buckettries == 1) {
-    document.getElementById("paragraf").innerHTML += "<br>You don't know what happend to it. It is disgusting."
+    document.getElementById("paragraf").innerHTML += "<br><br>You don't know what happend to it. It is disgusting."
     buckettries =2
   }
   else if (buckettries == 2) {
-    document.getElementById("paragraf").innerHTML += "<br>You decide to pick up the disgusting bucket."
+    document.getElementById("paragraf").innerHTML += "<br><br>You decide to pick up the disgusting bucket."
     document.getElementById("option3").setAttribute('class',"")
     var bucket = document.createElement("img")
   bucket.src = "img/emptybucket.png"
@@ -197,6 +197,7 @@ function pickupbucket() {
   bucket.style.opacity = "100"
   pickedupbucket = true
   bucket.setAttribute('onclick',"bucket()")
+  hasbucket = true
   }
 }
 var triedbucket = false

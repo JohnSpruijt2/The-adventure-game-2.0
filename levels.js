@@ -238,7 +238,7 @@ var levels = [
     }, 
 
     { // 12
-      name: "Cabin Basement - lvl 7",
+      name: "lvl7",
         title: "Cabin Basement",
         text: "There is an axe sitting next to the staircase. There is also a very filfthy looking bucket in the corner.",
         img: "img/basement.png",

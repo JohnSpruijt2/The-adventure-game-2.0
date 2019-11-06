@@ -16,7 +16,6 @@ function loadlevel(levelnummer) {
     document.getElementById("option3").innerHTML = lvl.thirdText
     document.getElementById("option3").setAttribute('onclick',lvl.thirdOnclick)
     document.getElementById("option3").setAttribute('class',lvl.thirdClass)
-
     loadlevelscript()
 }
 
@@ -83,6 +82,11 @@ function loadlevelscript() {
     else if (lvl.name == "Cabin Basement - lvl 7") {
       if (pickedupaxe == true) {
         document.getElementById("option2").setAttribute('class',"")
+      }
+      alert(hasbucket)
+      if (hasbucket == true) {
+        alert(hasbucket)
+        document.getElementById("option3").setAttribute('class',"")
       }
     }
     else {
