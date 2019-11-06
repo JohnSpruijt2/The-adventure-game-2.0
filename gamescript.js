@@ -167,7 +167,7 @@ function pickupaxe() {
   document.getElementById("paragraf").innerHTML += "<br><br>You picked up the axe."
 }
 
-
+var pickedupbucket = false
 var buckettries = 0
 function pickupbucket() {
   if (buckettries == 0) {
@@ -180,7 +180,13 @@ function pickupbucket() {
   }
   else if (buckettries == 2) {
     document.getElementById("paragraf").innerHTML += "<br>You decide to pick up the disgusting bucket."
-    document.getElementById("button3").setAttribute('class',"")
+    document.getElementById("option3").setAttribute('class',"")
+    var bucket = document.createElement("img")
+  bucket.src = "img/emptybucket.png"
+  document.getElementById("inventory").appendChild(bucket)
+  bucket.id = "item4"
+  bucket.style.opacity = "100"
+  pickedupbucket = true
   }
 }
 
