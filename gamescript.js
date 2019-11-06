@@ -1,5 +1,13 @@
 function onload() {
   document.getElementById("background").style.opacity = "100"
+  var inventory = document.createElement("div")
+    document.getElementById("background").appendChild(inventory)
+    inventory.id = "inventory"
+
+  //var btn4 = document.createElement("button")
+//    btn4.innerHTML = "help"
+//    document.getElementById("buttonbox").appendChild(btn4); 
+//    btn4.setAttribute('id',"option4")
 }
   
 
@@ -10,9 +18,13 @@ function pickupShovel() {
   console.log("picked up shovel in lvl 2")
   pickedupShovel = true
   hasshovel = true
-    document.getElementById("item1").src = "img/shovel.png"
+
+    var shovel = document.createElement("img")
+    shovel.src = "img/shovel.png"
+    document.getElementById("inventory").appendChild(shovel)
+    shovel.id = "item1"
+    shovel.style.opacity = "100"
     document.getElementById("item1").setAttribute('onclick',"shovelclick()")
-    document.getElementById("item1").style.opacity = "100"
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
 }
@@ -26,9 +38,13 @@ function shovelclick() {
         document.getElementById("option2").setAttribute('class',"none")
         document.getElementById("paragraf").innerHTML += "<br><br>You found a box with something rattling inside.<br>Your shovel broke during digging."
         document.getElementById("item1").src = "img/brokenshovel.png"
-        document.getElementById("item2").src = "img/chest.png"
-        document.getElementById("item2").setAttribute('onclick',"keychest()")
-        document.getElementById("item2").style.opacity = "100"
+
+        var chest = document.createElement("img")
+        chest.src = "img/chest.png"
+        document.getElementById("inventory").appendChild(chest)
+        chest.id = "item2"
+        chest.style.opacity = "100"
+        chest.setAttribute('onclick',"keychest()")
         hasshovel = false
         dugdirt = true
       }
@@ -141,6 +157,14 @@ function chest() {
     triedChest = true
   }
   
+}
+
+function pickupaxe() {
+  var axe = document.createElement("img")
+  axe.src = "img/axe.png"
+  document.getElementById("inventory").appendChild(axe)
+  axe.id = "item3"
+  axe.style.opacity = "100"
 }
 
 

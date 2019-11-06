@@ -1,11 +1,11 @@
 body {
     background-color: grey;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Oswald', sans-serif;
 }
 #background {
     opacity: 0;
     background-color: rgb(123, 123, 253);
-    background-image: url("img/background.png");
+    background-image: url("../img/background.png");
     width: 84%;
     height: 700px;
     margin: 50px auto 0px auto;
@@ -86,10 +86,20 @@ button {
     opacity: 0;
     margin: 15px;
     width: 80px;
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
     cursor: pointer;
 }
 #item2:hover {
+    width: 90px;
+}
+#item3 {
+    opacity: 0;
+    margin: 15px;
+    width: 80px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+#item3:hover {
     width: 90px;
 }
 #QTEprompt {

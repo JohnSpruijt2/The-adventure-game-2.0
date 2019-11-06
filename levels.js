@@ -13,16 +13,16 @@ var levels = [
         secondOnclick: "loadlevel(1)",
         secondClass: "options",
 
-        thirdText: "",
-        thirdOnclick: "",
-        thirdClass: "",
+        thirdText: "Help",
+        thirdOnclick: "loadlevel(11)",
+        thirdClass: "options",
     },
 
 
     { // 1
         name: "Credits",
         title: "Credits ",
-        text: "Made by: John Spruijt <br> ©2019",
+        text: "Artwork by: Google <br>Game design: John Spruijt <br>Game developed by: John Spruijt",
         img: "img/frontGoblin.png",
         
         firstText: "Go back",
@@ -176,7 +176,7 @@ var levels = [
         secondClass: "options",
 
         thirdText: "Go down the staircase",
-        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdOnclick: "loadlevel(12)",
         thirdClass: "options",
     },
 
@@ -216,5 +216,43 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
+    },
+    
+    { // 11
+        name: "Help screen",
+        title: "Help screen",
+        text: "This is a text adventure game. You win the game by getting further into the game without dying. <br><br>You click the black buttons in order to do something.<br><br>When you have something in your inventory you can click on it in order to interact with it.",
+        img: "img/frontGoblin.png",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(0)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+    }, 
+
+    { // 12
+      name: "Cabin Basement - lvl 7",
+        title: "Cabin Basement",
+        text: "There is an axe sitting next to the staircase. There is also a bucket in the corner.",
+        img: "img/basement.png",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(8)",
+        firstClass: "options",
+
+        secondText: "Pick up the axe",
+        secondOnclick: "pickupaxe()",
+        secondClass: "options",
+
+        thirdText: "Pick up the bucket",
+        thirdOnclick: "pickupbucket()",
+        thirdClass: "options",
     }
   ]
