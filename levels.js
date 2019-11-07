@@ -238,7 +238,7 @@ var levels = [
     }, 
 
     { // 12
-      name: "lvl7",
+      name: "cabin basement - lvl 7",
         title: "Cabin Basement",
         text: "There is an axe sitting next to the staircase. There is also a very filfthy looking bucket in the corner.",
         img: "img/basement.png",
@@ -259,16 +259,35 @@ var levels = [
     { // 13
       name: "village - lvl 8",
         title: "village path",
-        text: "The forest comes to an end and you find yourself in a village",
+        text: "The forest comes to an end and you find yourself in a village. You see an Inn called 'The winking skeever'.",
         img: "img/village.jpg",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(5)",
         firstClass: "options",
 
+        secondText: "Go inside the inn",
+        secondOnclick: "loadlevel(14)",
+        secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+    },
+
+    { // 14
+      name: "Inside the inn - lvl 9",
+        title: "Inside the Inn",
+        text: "",
+        img: "img/frontGoblin.png",
+        
+        firstText: "Go back <i class='fas fa-undo'></i>",
+        firstOnclick: "loadlevel(13)",
+        firstClass: "options",
+
         secondText: "",
         secondOnclick: "",
-        secondClass: "options",
+        secondClass: "",
 
         thirdText: "",
         thirdOnclick: "",
