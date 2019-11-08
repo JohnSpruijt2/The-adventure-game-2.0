@@ -234,6 +234,7 @@ function workTree() {
     
   }
 }
+var choppingDone = false
 var firewoodChopped = 0
 var chops = 5
 function chopping() {
@@ -244,6 +245,10 @@ function chopping() {
       chops=5
     }
     document.getElementById("paragraf").innerHTML = firewoodChopped+" pieces of firewood chopped<br><br>" + chops+" chops to go"
+  }
+  if (firewoodChopped == 5) {
+    loadlevel(15)
+    choppingDone = true
   }
 }
 
