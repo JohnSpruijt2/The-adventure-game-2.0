@@ -301,7 +301,7 @@ var levels = [
         img: "img/Inn.png",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
-        firstOnclick: "loadlevel(0)",
+        firstOnclick: "loadlevel(14)",
         firstClass: "options",
 
         secondText: "Ask about work",
