@@ -330,5 +330,24 @@ var levels = [
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
+    },
+
+    { // 17
+      name: "Bed - lvl 9",
+        title: "Bedroom",
+        text: "",
+        img: "img/Inn.png",
+        
+        firstText: "Go back",
+        firstOnclick: "loadlevel(14)",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
     }
   ]

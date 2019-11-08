@@ -268,7 +268,14 @@ function chopping() {
 var kickedoutInn = false
 function bed() {
   if (hasgold == true) {
-
+    document.getElementById("paragraf").innerHTML += "<br><br>'Of course, it's only a few gold.'"
+    document.getElementById("option1").setAttribute('class',"")
+    document.getElementById("option2").setAttribute('class',"")
+    document.getElementById("option3").setAttribute('class',"")
+    setTimeout(function(){
+      document.getElementById("item5").remove();
+      loadlevel(17)
+    },2000)
   }
   else {
     document.getElementById("paragraf").innerHTML += "<br><br>'I've had enough of people like you. This isn't a homeless shelter get out!"

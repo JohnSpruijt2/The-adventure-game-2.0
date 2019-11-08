@@ -56,9 +56,6 @@ function loadlevelscript() {
         }
         
       }
-      else {
-        
-      }
     }
     else if (lvl.name == "left path - lvl 4") {
       if (dugdirt == false) {
@@ -76,9 +73,6 @@ function loadlevelscript() {
         document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
         document.getElementById("option2").setAttribute('class',lvl.secondClass)
 
-      }
-      else {
-        
       }
     }
     else if (lvl.name == "cabin basement - lvl 7") {
@@ -98,8 +92,5 @@ function loadlevelscript() {
       if (kickedoutInn == true) {
         document.getElementById("option2").setAttribute('onclick',"kickedout()")
       }
-    }
-    else {
-      
     }
 }
