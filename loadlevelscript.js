@@ -84,7 +84,6 @@ function loadlevelscript() {
         document.getElementById("option2").setAttribute('class',"")
       }
       if (hasbucket == true) {
-        alert(hasbucket)
         document.getElementById("option3").setAttribute('class',"")
       }
     }

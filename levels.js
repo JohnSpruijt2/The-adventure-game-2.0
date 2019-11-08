@@ -270,27 +270,46 @@ var levels = [
         secondOnclick: "loadlevel(14)",
         secondClass: "options",
 
-        thirdText: "",
-        thirdOnclick: "",
-        thirdClass: "",
+        thirdText: "continue traveling",
+        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdClass: "options",
     },
 
     { // 14
       name: "Inside the inn - lvl 9",
-        title: "Inside the Inn",
-        text: "",
-        img: "img/frontGoblin.png",
+        title: "Inside the winking skeever Inn",
+        text: "You could talk to the Innkeeper.",
+        img: "img/Inn.png",
         
         firstText: "Go back <i class='fas fa-undo'></i>",
         firstOnclick: "loadlevel(13)",
         firstClass: "options",
 
-        secondText: "",
-        secondOnclick: "",
-        secondClass: "",
+        secondText: "Talk to the Innkeeper",
+        secondOnclick: "loadlevel(15)",
+        secondClass: "options",
 
         thirdText: "",
         thirdOnclick: "",
         thirdClass: "",
+    },
+
+    { // 15
+      name: "Innkeeper - lvl 9",
+        title: "Innkeeper",
+        text: "You could ask for a bed or work for some money",
+        img: "img/Inn.png",
+        
+        firstText: "Go back <i class='fas fa-undo'></i>",
+        firstOnclick: "loadlevel(0)",
+        firstClass: "options",
+
+        secondText: "Ask about work",
+        secondOnclick: "alert('This path hasnt been programmed yet')",
+        secondClass: "options",
+
+        thirdText: "Ask for a bed",
+        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdClass: "options",
     }
   ]

@@ -66,7 +66,7 @@ function key() {
       console.log("unlocked cabin")
     document.getElementById("paragraf").innerHTML += "<br><br>You unlocked the cabin door"
     unlockcabin = true
-    document.getElementById("option2").innerHTML = "Go inside the cabin"
+    document.getElementById("option2").innerHTML = "Go inside the cabin <i class='fas fa-arrow-up'></i>"
     document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
     }
@@ -166,12 +166,13 @@ function pickupaxe() {
   pickedupaxe = true
   document.getElementById("option2").setAttribute('class',"")
   document.getElementById("paragraf").innerHTML += "<br><br>You picked up the axe."
+  console.log("picked up axe - lvl 7")
 }
 var triedAxe = false
 function axe() {
   if (triedAxe == false) {
+    document.getElementById("paragraf").innerHTML += "<br><br>There is nothing to do with your axe."
     triedAxe = true
-    DocumentTimeline.getElementById("paragraf").innerHTML += "<br><br>There is nothing to do with your axe."
   }
 }
 
@@ -198,6 +199,7 @@ function pickupbucket() {
   pickedupbucket = true
   bucket.setAttribute('onclick',"bucket()")
   hasbucket = true
+  console.log("picked up disgusting bucket")
   }
 }
 var triedbucket = false

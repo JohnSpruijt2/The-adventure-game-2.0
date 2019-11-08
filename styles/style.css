@@ -9,7 +9,7 @@ body {
     width: 84%;
     height: 700px;
     margin: 50px auto 0px auto;
-    transition: all 750ms linear;
+    transition: all 750ms ease-out;
 }
 #picture {
     width: 639px;
