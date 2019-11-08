@@ -31,6 +31,7 @@ function loadlevelscript() {
     triedChest = false
     triedbucket = false
     triedAxe = false
+    triedWorkTrees = false
 
     if (lvl.name == "QTE - lvl 5") {
       if (firstCabinVisit == true) {

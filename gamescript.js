@@ -170,10 +170,16 @@ function pickupaxe() {
 }
 var triedAxe = false
 function axe() {
-  if (triedAxe == false) {
-    document.getElementById("paragraf").innerHTML += "<br><br>There is nothing to do with your axe."
-    triedAxe = true
+  if (lvl.name == "Work Trees - lvl 9") {
+    chopping()
   }
+  else {
+    if (triedAxe == false) {
+      document.getElementById("paragraf").innerHTML += "<br><br>There is nothing to do with your axe."
+      triedAxe = true
+    }
+  }
+  
 }
 
 var hasbucket = false
@@ -210,7 +216,36 @@ function bucket() {
   }
 }
 
-
+function work() {
+  document.getElementById("paragraf").innerHTML += "<br><br>'You could chop some firewood for some money if you had an axe.'"
+  document.getElementById("option2").innerHTML = "Chop some firewood"
+  document.getElementById("option2").setAttribute('onclick',"workTree()")
+}
+var triedWorkTries = false
+function workTree() {
+  if (pickedupaxe == true) {
+    loadlevel(16)
+  }
+  else {
+    if (triedWorkTrees == false){
+      document.getElementById("paragraf").innerHTML += "<br><br>You don't have an axe"
+      triedWorkTrees = true
+    }
+    
+  }
+}
+var firewoodChopped = 0
+var chops = 5
+function chopping() {
+  if (chops > 0) {
+    chops--
+    if(chops == 0) {
+      firewoodChopped++
+      chops=5
+    }
+    document.getElementById("paragraf").innerHTML = firewoodChopped+" pieces of firewood chopped<br><br>" + chops+" chops to go"
+  }
+}
 
 function restart() {
   location.reload()
