@@ -271,7 +271,7 @@ var levels = [
         secondClass: "options",
 
         thirdText: "continue traveling",
-        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdOnclick: "loadlevel(18)",
         thirdClass: "options",
     },
 
@@ -335,11 +335,30 @@ var levels = [
     { // 17
       name: "Bed - lvl 9",
         title: "Bedroom",
-        text: "",
+        text: "There is a nice and comfy bed.",
         img: "img/Inn.png",
         
+        firstText: "Go to sleep",
+        firstOnclick: "sleeping()",
+        firstClass: "options",
+
+        secondText: "",
+        secondOnclick: "",
+        secondClass: "",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+    },
+
+    {
+      name: "Continue traveling - lvl 10",
+        title: "Continue",
+        text: "You continue travelling",
+        img: "img/woodChopping.png",
+        
         firstText: "Go back",
-        firstOnclick: "loadlevel(14)",
+        firstOnclick: "loadlevel(13)",
         firstClass: "options",
 
         secondText: "",

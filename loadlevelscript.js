@@ -33,6 +33,7 @@ function loadlevelscript() {
     triedAxe = false
     triedWorkTrees = false
     triedInn = false
+    triedTalk = false
 
     if (lvl.name == "QTE - lvl 5") {
       if (firstCabinVisit == true) {
@@ -91,6 +92,11 @@ function loadlevelscript() {
     else if (lvl.name == "village - lvl 8") {
       if (kickedoutInn == true) {
         document.getElementById("option2").setAttribute('onclick',"kickedout()")
+      }
+    }
+    else if (lvl.name == "Inside the inn - lvl 9") {
+      if (hasslept == true) {
+        document.getElementById("option2").setAttribute('onclick',"sleptTalk()")
       }
     }
 }

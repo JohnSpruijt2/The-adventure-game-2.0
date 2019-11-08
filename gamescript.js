@@ -240,14 +240,14 @@ function workTree() {
 }
 var choppingDone = false
 var firewoodChopped = 0
-var chops = 5
+var chops = 3
 var hasgold = false
 function chopping() {
   if (chops > 0) {
     chops--
     if(chops == 0) {
       firewoodChopped++
-      chops=5
+      chops=3
     }
     document.getElementById("paragraf").innerHTML = firewoodChopped+" pieces of firewood chopped<br><br>" + chops+" chops to go"
   }
@@ -297,6 +297,25 @@ function kickedout() {
     triedInn = true
   }
   
+}
+
+var hasslept = false
+function sleeping() {
+  alert("no")
+  document.getElementById("paragraf").innerHTML += "<br><br>You decide to go to sleep"
+  document.getElementById("option1").setAttribute('class',"")
+  document.getElementById("option2").setAttribute('class',"")
+  document.getElementById("option3").setAttribute('class',"")
+  setTimeout(function() {
+    hasslept = true
+    loadlevel(14)
+  },2000);
+}
+function sleptTalk() {
+  if (triedTalk == false) {
+    document.getElementById('paragraf').innerHTML += '<br><br>You have already talked about everything.'
+    triedTalk = true
+  }
 }
 
 
