@@ -32,6 +32,7 @@ function loadlevelscript() {
     triedbucket = false
     triedAxe = false
     triedWorkTrees = false
+    triedInn = false
 
     if (lvl.name == "QTE - lvl 5") {
       if (firstCabinVisit == true) {
@@ -91,6 +92,11 @@ function loadlevelscript() {
     else if (lvl.name == "Innkeeper - lvl 9") {
       if (choppingDone == true){
         document.getElementById("option2").setAttribute('class',"")
+      }
+    }
+    else if (lvl.name == "village - lvl 8") {
+      if (kickedoutInn == true) {
+        document.getElementById("option2").setAttribute('onclick',"kickedout()")
       }
     }
     else {

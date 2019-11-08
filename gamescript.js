@@ -265,16 +265,32 @@ function chopping() {
   }
 }
 
+var kickedoutInn = false
 function bed() {
   if (hasgold == true) {
 
   }
   else {
     document.getElementById("paragraf").innerHTML += "<br><br>'I've had enough of people like you. This isn't a homeless shelter get out!"
-    loadlevel(13)
+    document.getElementById("option1").setAttribute('class',"")
+    document.getElementById("option2").setAttribute('class',"")
+    document.getElementById("option3").setAttribute('class',"")
+    setTimeout(function() {
+      kickedoutInn = true
+      loadlevel(13)
+      document.getElementById("paragraf").innerHTML += "<br><br>You got kicked out of the Inn"
+    },2000);
+    
   }
 }
-
+triedInn = false
+function kickedout() {
+  if (triedInn == false) {
+    document.getElementById("paragraf").innerHTML += "<br><br>You probably shouldn't go in there anymore."
+    triedInn = true
+  }
+  
+}
 
 
 function restart() {
