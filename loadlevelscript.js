@@ -90,7 +90,7 @@ function loadlevelscript() {
     }
     else if (lvl.name == "Innkeeper - lvl 9") {
       if (choppingDone == true){
-        document.getElementById("options2").setAttribute('class',"")
+        document.getElementById("option2").setAttribute('class',"")
       }
     }
     else {

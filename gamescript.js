@@ -18,6 +18,7 @@ function pickupShovel() {
     shovel.src = "img/shovel.png"
     document.getElementById("inventory").appendChild(shovel)
     shovel.id = "item1"
+    shovel.setAttribute('class',"items")
     shovel.style.opacity = "100"
     document.getElementById("item1").setAttribute('onclick',"shovelclick()")
     document.getElementById("option3").setAttribute('class',"")
@@ -38,6 +39,7 @@ function shovelclick() {
         chest.src = "img/chest.png"
         document.getElementById("inventory").appendChild(chest)
         chest.id = "item2"
+        chest.setAttribute('class',"items")
         chest.style.opacity = "100"
         chest.setAttribute('onclick',"keychest()")
         hasshovel = false
@@ -163,6 +165,7 @@ function pickupaxe() {
   axe.id = "item3"
   axe.style.opacity = "100"
   axe.setAttribute('onclick',"axe()")
+  axe.setAttribute('class',"items")
   pickedupaxe = true
   document.getElementById("option2").setAttribute('class',"")
   document.getElementById("paragraf").innerHTML += "<br><br>You picked up the axe."
@@ -201,6 +204,7 @@ function pickupbucket() {
   bucket.src = "img/emptybucket.png"
   document.getElementById("inventory").appendChild(bucket)
   bucket.id = "item4"
+  bucket.setAttribute('class',"items")
   bucket.style.opacity = "100"
   pickedupbucket = true
   bucket.setAttribute('onclick',"bucket()")
@@ -237,6 +241,7 @@ function workTree() {
 var choppingDone = false
 var firewoodChopped = 0
 var chops = 5
+var hasgold = false
 function chopping() {
   if (chops > 0) {
     chops--
@@ -247,10 +252,30 @@ function chopping() {
     document.getElementById("paragraf").innerHTML = firewoodChopped+" pieces of firewood chopped<br><br>" + chops+" chops to go"
   }
   if (firewoodChopped == 5) {
-    loadlevel(15)
     choppingDone = true
+    var gold = document.createElement("img")
+    gold.src = "img/goldpouch.png"
+    document.getElementById("inventory").appendChild(gold)
+    gold.id = "item5"
+    gold.style.opacity = "100"
+    gold.setAttribute('class',"items")
+    hasgold = true
+    loadlevel(15)
+    document.getElementById("paragraf").innerHTML = "You could ask for a bed.<br><br>The Inn keeper gives you some money for chopping the firewood."
   }
 }
+
+function bed() {
+  if (hasgold == true) {
+
+  }
+  else {
+    document.getElementById("paragraf").innerHTML += "<br><br>'I've had enough of people like you. This isn't a homeless shelter get out!"
+    loadlevel(13)
+  }
+}
+
+
 
 function restart() {
   location.reload()

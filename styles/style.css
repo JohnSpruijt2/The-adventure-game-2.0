@@ -13,6 +13,7 @@ body {
 }
 #picture {
     width: 639px;
+    max-height: 630px;
     float: left;
     margin-top: 40px;
     margin-left: 30px;
@@ -74,45 +75,15 @@ button {
     height: 697px;
     background-color: rgba(5, 63, 46, 0.743);
 }
-#item1 {
+.items {
     opacity: 0;
     margin: 15px;
     width: 80px;
     transition-duration: 0.5s;
     cursor: pointer;
 }
-#item1:hover {
+.items:hover {
     transition-duration: 0.5s;
-    width: 90px;
-}
-#item2 {
-    opacity: 0;
-    margin: 15px;
-    width: 80px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-#item2:hover {
-    width: 90px;
-}
-#item3 {
-    opacity: 0;
-    margin: 15px;
-    width: 80px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-#item3:hover {
-    width: 90px;
-}
-#item4 {
-    opacity: 0;
-    margin: 15px;
-    width: 80px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-#item4:hover {
     width: 90px;
 }
 #QTEprompt {

@@ -309,7 +309,7 @@ var levels = [
         secondClass: "options",
 
         thirdText: "Ask for a bed",
-        thirdOnclick: "alert('This path hasnt been programmed yet')",
+        thirdOnclick: "bed()",
         thirdClass: "options",
     },
 
@@ -317,7 +317,7 @@ var levels = [
       name: "Work Trees - lvl 9",
         title: "Chopping firewood",
         text: "You hold your axe in hand ready to chop",
-        img: "img/frontGoblin.png",
+        img: "img/woodChopping.png",
         
         firstText: "Go back",
         firstOnclick: "loadlevel(15)",
