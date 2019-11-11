@@ -351,15 +351,53 @@ var levels = [
         thirdClass: "",
     },
 
-    {
-      name: "Continue traveling - lvl 10",
-        title: "Continue",
-        text: "You continue travelling",
-        img: "img/woodChopping.png",
+    { // 18
+      name: "river - lvl 10",
+        title: "river",
+        text: "You come across a river. <br><br>On the other side of this river is a place that is safe of goblins.",
+        img: "img/river.png",
         
         firstText: "Go back",
         firstOnclick: "loadlevel(13)",
         firstClass: "options",
+
+        secondText: "Attempt to cross the river",
+        secondOnclick: "loadlevel(19)",
+        secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+    },
+
+    { // 19
+      name: "river qeustion - lvl 10",
+        title: "Are you sure?",
+        text: "Are you sure you want to Attempt to cross the river? <br><br>You probably can't make it back considering the strength of the current.",
+        img: "img/river.png",
+        
+        firstText: "Yes, I'm sure",
+        firstOnclick: "endgame()",
+        firstClass: "options",
+
+        secondText: "No, I'm not sure",
+        secondOnclick: "loadlevel(18)",
+        secondClass: "options",
+
+        thirdText: "",
+        thirdOnclick: "",
+        thirdClass: "",
+    },
+
+    { // 20
+      name: "The END",
+        title: "The END",
+        text: "",
+        img: "img/frontGoblin.png",
+        
+        firstText: "",
+        firstOnclick: "",
+        firstClass: "",
 
         secondText: "",
         secondOnclick: "",

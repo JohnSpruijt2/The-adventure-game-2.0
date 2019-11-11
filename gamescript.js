@@ -58,6 +58,7 @@ function keychest() {
   document.getElementById("item2").src = "img/key.png"
   document.getElementById("item2").setAttribute('onclick',"key()")
   console.log("opened chest to find key")
+  haskey = true
 }
 var unlockcabin = false
 var triedKey = false
@@ -71,6 +72,7 @@ function key() {
     document.getElementById("option2").innerHTML = "Go inside the cabin <i class='fas fa-arrow-up'></i>"
     document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
+    haskey = false
     }
   }
   else if (lvl.name == "Inside cabin - lvl 6") {
@@ -107,6 +109,7 @@ function dirtmount() {
       console.log("inspected dirt mount in lvl 4")
       document.getElementById("paragraf").innerHTML += "<br><br>It apears something is buried here. You could try digging if you had a shovel."
       inspectdirt = true
+      haschest = true
     }
     else if (inspectdirt == true) {
       
@@ -145,13 +148,14 @@ function QTEjump() {
 function QTElost() {
   loadlevel(9)
 }
-
+var haschest = false
 var triedChest = false
 function chest() {
   if (triedChest == false) {
     document.getElementById("paragraf").innerHTML += "<br><br>You can't seem to open or move the chest."
     console.log("investigated chest")
     triedChest = true
+    haschest = false
   }
   
 }
@@ -317,6 +321,13 @@ function sleptTalk() {
     triedTalk = true
   }
 }
+
+function endgame() {
+  loadlevel(20)
+  document.getElementById("buttonbox").style.display = "none"
+  document.getElementById("textbox").style.height = "575px"
+}
+
 
 
 function restart() {
