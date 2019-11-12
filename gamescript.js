@@ -1,3 +1,7 @@
+//John Spruijt
+//2019
+
+
 function onload() {
   var inventory = document.createElement("div")
     document.getElementById("background").appendChild(inventory)
@@ -403,21 +407,6 @@ function endgame() {
     document.getElementById("paragraf").innerHTML += "You have acomplised nothing of value."
   }
 }
-
-//var btn4 = document.createElement("button")
-//    btn4.innerHTML = "help"
-//    document.getElementById("buttonbox").appendChild(btn4); 
-//    btn4.setAttribute('id',"option4")
-
-//var btn5 = document.createElement("button")
-//    btn5.innerHTML = "help"
-//    document.getElementById("buttonbox").appendChild(btn5); 
-//    btn5.setAttribute('id',"option5")
-
-//var btn6 = document.createElement("button")
-//    btn6.innerHTML = "help"
-//    document.getElementById("buttonbox").appendChild(btn6); 
-//    btn6.setAttribute('id',"option6")
 
 
 

@@ -1,3 +1,6 @@
+//John Spruijt
+//2019
+
 function loadlevel(levelnummer) {
     window.lvl = levels[levelnummer];
     console.log(lvl.name)

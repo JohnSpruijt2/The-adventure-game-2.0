@@ -1,3 +1,6 @@
+//John Spruijt
+//2019
+
 var levels = [
     { // 0
         name: "Home screen",
