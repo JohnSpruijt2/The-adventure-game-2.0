@@ -345,6 +345,7 @@ function restart() {
     unlockcabin = false
     choppingDone = false
     hasslept = false
+    loadlevel(0)
 }
 
 function endgame() {
