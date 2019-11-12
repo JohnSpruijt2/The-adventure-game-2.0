@@ -1,11 +1,11 @@
 //John Spruijt
 //2019
 
-
 function onload() {
   var inventory = document.createElement("div")
     document.getElementById("background").appendChild(inventory)
     inventory.id = "inventory"
+    document.getElementById('background').style.opacity = "100"
 }
   
 
@@ -272,6 +272,7 @@ function bed() {
     document.getElementById("option1").setAttribute('class',"")
     document.getElementById("option2").setAttribute('class',"")
     document.getElementById("option3").setAttribute('class',"")
+    hasgold == false
     setTimeout(function(){
       document.getElementById("item5").remove();
       loadlevel(17)
@@ -320,12 +321,23 @@ function sleptTalk() {
 
 var lifes = 1
 function restart() {
+  
   lifes++
-  document.getElementById('inventory').removeChild(item1)
-  document.getElementById('inventory').removeChild(item2)
-  document.getElementById('inventory').removeChild(item3)
-  document.getElementById('inventory').removeChild(item4)
-  document.getElementById('inventory').removeChild(item5)
+  if (pickedupShovel == true) {
+    document.getElementById('inventory').removeChild(item1)
+  }
+  if (dugdirt == true) {
+    document.getElementById('inventory').removeChild(item2)
+  }
+  if (pickedupaxe == true) {
+    document.getElementById('inventory').removeChild(item3)
+  }
+  if (pickedupbucket == true) {
+    document.getElementById('inventory').removeChild(item4)
+  }
+  if (hasgold == true) {
+    document.getElementById('inventory').removeChild(item5)
+  }
   inspectdirt = false
     triedCabin = false
     triedShovel = false
@@ -350,14 +362,16 @@ function restart() {
     hasslept = false
     haskey = false
     loadlevel(0)
-}
+  }
+
+
 
 function endgame() {
   loadlevel(20)
   document.getElementById("buttonbox").style.display = "none"
   document.getElementById("textbox").style.height = "575px"
   if (lifes == 1) {
-    document.getElementById("paragraf").innerHTML = "You got to this safe place after just 1 try.<br><br>"
+    document.getElementById("paragraf").innerHTML = "You got to this safe place after just one try!<br><br>"
   }
   else {
     document.getElementById("paragraf").innerHTML = "It took you " + lifes + " tries to get to this point.<br><br>"
@@ -407,7 +421,6 @@ function endgame() {
     document.getElementById("paragraf").innerHTML += "You have acomplised nothing of value."
   }
 }
-
 
 
 loadlevel(0)
