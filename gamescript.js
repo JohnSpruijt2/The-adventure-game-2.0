@@ -1,5 +1,4 @@
 function onload() {
-  document.getElementById("background").style.opacity = "100"
   var inventory = document.createElement("div")
     document.getElementById("background").appendChild(inventory)
     inventory.id = "inventory"
@@ -19,7 +18,6 @@ function pickupShovel() {
     document.getElementById("inventory").appendChild(shovel)
     shovel.id = "item1"
     shovel.setAttribute('class',"items")
-    shovel.style.opacity = "100"
     document.getElementById("item1").setAttribute('onclick',"shovelclick()")
     document.getElementById("option3").setAttribute('class',"")
     document.getElementById("paragraf").innerHTML += "<br><br>You picked up a shovel"
@@ -40,7 +38,6 @@ function shovelclick() {
         document.getElementById("inventory").appendChild(chest)
         chest.id = "item2"
         chest.setAttribute('class',"items")
-        chest.style.opacity = "100"
         chest.setAttribute('onclick',"keychest()")
         hasshovel = false
         dugdirt = true
@@ -165,7 +162,6 @@ function pickupaxe() {
   axe.src = "img/axe.png"
   document.getElementById("inventory").appendChild(axe)
   axe.id = "item3"
-  axe.style.opacity = "100"
   axe.setAttribute('onclick',"axe()")
   axe.setAttribute('class',"items")
   pickedupaxe = true
@@ -207,7 +203,6 @@ function pickupbucket() {
   document.getElementById("inventory").appendChild(bucket)
   bucket.id = "item4"
   bucket.setAttribute('class',"items")
-  bucket.style.opacity = "100"
   pickedupbucket = true
   bucket.setAttribute('onclick',"bucket()")
   hasbucket = true
@@ -259,7 +254,6 @@ function chopping() {
     gold.src = "img/goldpouch.png"
     document.getElementById("inventory").appendChild(gold)
     gold.id = "item5"
-    gold.style.opacity = "100"
     gold.setAttribute('class',"items")
     hasgold = true
     loadlevel(15)
@@ -323,6 +317,11 @@ function sleptTalk() {
 var lifes = 1
 function restart() {
   lifes++
+  document.getElementById('inventory').removeChild(item1)
+  document.getElementById('inventory').removeChild(item2)
+  document.getElementById('inventory').removeChild(item3)
+  document.getElementById('inventory').removeChild(item4)
+  document.getElementById('inventory').removeChild(item5)
   inspectdirt = false
     triedCabin = false
     triedShovel = false
@@ -345,6 +344,7 @@ function restart() {
     unlockcabin = false
     choppingDone = false
     hasslept = false
+    haskey = false
     loadlevel(0)
 }
 
@@ -352,7 +352,7 @@ function endgame() {
   loadlevel(20)
   document.getElementById("buttonbox").style.display = "none"
   document.getElementById("textbox").style.height = "575px"
-  document.getElementById("paragraf").innerHTML = "It took you " + lifes + " tries to get to this point"
+  document.getElementById("paragraf").innerHTML = "It took you " + lifes + " tries to get to this point.<br><br>"
   var something = false
   if (pickedupShovel == true) {
     document.getElementById("paragraf").innerHTML += "You took a shovel that you found without asking.<br><br>"
