@@ -72,7 +72,6 @@ function key() {
     document.getElementById("option2").innerHTML = "Go inside the cabin <i class='fas fa-arrow-up'></i>"
     document.getElementById("option2").setAttribute('onclick',"firstcabincheck()")
     document.getElementById("option2").setAttribute('class',lvl.secondClass)
-    haskey = false
     }
   }
   else if (lvl.name == "Inside cabin - lvl 6") {
@@ -117,7 +116,6 @@ function dirtmount() {
 }
 
 
-var canCabin = false
 var triedCabin = false
 function cabinDoor() {
     if (triedCabin == false) {
@@ -305,7 +303,6 @@ function kickedout() {
 
 var hasslept = false
 function sleeping() {
-  alert("no")
   document.getElementById("paragraf").innerHTML += "<br><br>You decide to go to sleep"
   document.getElementById("option1").setAttribute('class',"")
   document.getElementById("option2").setAttribute('class',"")
@@ -322,16 +319,81 @@ function sleptTalk() {
   }
 }
 
+
+var lifes = 0
+function restart() {
+  lifes++
+  inspectdirt = false
+    triedCabin = false
+    triedShovel = false
+    triedKey = false
+    triedChest = false
+    triedbucket = false
+    triedAxe = false
+    triedWorkTrees = false
+    triedInn = false
+    triedTalk = false
+    pickedupShovel = false
+    hasshovel = false
+    pickedupaxe = false
+    pickedupbucket = false
+    dugdirt = false
+    firstCabinVisit = true
+    haschest = false
+    hasbucket = false
+    hasgold = false
+    unlockcabin = false
+    choppingDone = false
+    hasslept = false
+}
+
 function endgame() {
   loadlevel(20)
   document.getElementById("buttonbox").style.display = "none"
   document.getElementById("textbox").style.height = "575px"
-}
-
-
-
-function restart() {
-  location.reload()
+  var something = false
+  if (pickedupShovel == true) {
+    document.getElementById("paragraf").innerHTML += "You took a shovel that you found without asking.<br><br>"
+    something = true
+  }
+  if (dugdirt == true) {
+    document.getElementById("paragraf").innerHTML += "You used the shovel to dig up a chest.<br><br>"
+    something = true
+  }
+  if (haskey == true) {
+    document.getElementById("paragraf").innerHTML += "You found a key in the chest.<br><br>"
+    something = true
+  }
+  if (unlockcabin == true) {
+    document.getElementById("paragraf").innerHTML += "You used the key to open the cabin door.<br><br>"
+    something = true
+  }
+  if (firstCabinVisit == false) {
+    document.getElementById("paragraf").innerHTML += "You escaped death with your quick reflexes.<br><br>"
+    something = true
+  }
+  if (pickedupaxe == true) {
+    document.getElementById("paragraf").innerHTML += "You picked up an axe that you found in the basement of the cabin.<br><br>"
+    something = true
+  }
+  if (pickedupbucket == true) {
+    document.getElementById("paragraf").innerHTML += "You picked up a disgusting bucket that you carried around with you for no reason.<br><br>"
+  }
+  if (choppingDone == true) {
+    document.getElementById("paragraf").innerHTML += "You worked for the Inn keeper to earn some gold.<br><br>"
+  }
+  if (hasslept == true) {
+    document.getElementById("paragraf").innerHTML += "You immediatly spend all your gold on sleeping in a bed.<br><br>"
+  }
+  else if (hasgold == true) {
+    document.getElementById("paragraf").innerHTML += "You saved your gold like a smart person.<br><br>"
+  }
+  else if (kickedoutInn == true) {
+    document.getElementById("paragraf").innerHTML += "You got kicked out of the Inn.<br><br>"
+  }
+  if (something == false) {
+    document.getElementById("paragraf").innerHTML += "You have acomplised nothing of value."
+  }
 }
 
 //var btn4 = document.createElement("button")
