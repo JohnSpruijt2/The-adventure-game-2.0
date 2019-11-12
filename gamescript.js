@@ -352,7 +352,13 @@ function endgame() {
   loadlevel(20)
   document.getElementById("buttonbox").style.display = "none"
   document.getElementById("textbox").style.height = "575px"
-  document.getElementById("paragraf").innerHTML = "It took you " + lifes + " tries to get to this point.<br><br>"
+  if (lifes == 1) {
+    document.getElementById("paragraf").innerHTML = "You got to this safe place after just 1 try.<br><br>"
+  }
+  else {
+    document.getElementById("paragraf").innerHTML = "It took you " + lifes + " tries to get to this point.<br><br>"
+  }
+  
   var something = false
   if (pickedupShovel == true) {
     document.getElementById("paragraf").innerHTML += "You took a shovel that you found without asking.<br><br>"
