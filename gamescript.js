@@ -272,7 +272,7 @@ function bed() {
     document.getElementById("option1").setAttribute('class',"")
     document.getElementById("option2").setAttribute('class',"")
     document.getElementById("option3").setAttribute('class',"")
-    hasgold == false
+    hasgold = false
     setTimeout(function(){
       document.getElementById("item5").remove();
       loadlevel(17)
